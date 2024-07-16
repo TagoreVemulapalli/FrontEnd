@@ -1,0 +1,60 @@
+<div class="container">
+  <mat-card class="create-user-card">
+    <mat-card-title>Create User</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="createUser()" [formGroup]="userForm">
+        <div class="form-group">
+          <label for="user_name">User Name<span class="mandatory">*</span></label>            
+          <input type="text" class="form-control" id="user_name" formControlName="user_name" required />
+          <div *ngIf="userForm.get('user_name')?.errors?.['required'] && (userForm.get('user_name')?.dirty || userForm.get('user_name')?.touched)">
+            <div class="error-message">Username is required.</div>
+          </div>
+          <div *ngIf="usernameExistsError" class="error-message">
+            Username already exists.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="first_name">First Name<span class="mandatory">*</span></label>
+          <input type="text" class="form-control" id="first_name" formControlName="first_name" required />
+          <div *ngIf="userForm.get('first_name')?.errors?.['required'] && (userForm.get('first_name')?.dirty || userForm.get('first_name')?.touched)">
+            <div class="error-message">First Name is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name<span class="mandatory">*</span></label>
+          <input type="text" class="form-control" id="last_name" formControlName="last_name" required />
+          <div *ngIf="userForm.get('last_name')?.errors?.['required'] && (userForm.get('last_name')?.dirty || userForm.get('last_name')?.touched)">
+            <div class="error-message">Last Name is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email<span class="mandatory">*</span></label>
+          <input type="email" class="form-control" id="email" name="email" formControlName="email" required/>
+          <div *ngIf="userForm.get('email')!.errors?.['required']">
+            <div *ngIf="userForm.get('email')?.errors?.['required'] && (userForm.get('email')?.dirty || userForm.get('email')?.touched)">
+              <div class="error-message">Email is required.</div></div>
+          <div *ngIf="userForm.get('email')!.errors?.['pattern']"><div class="error-message">Please enter a valid email address.</div></div></div>
+        </div>
+        <div class="form-group">
+          <label for="user_status">User Status<span class="mandatory">*</span></label>
+          <mat-select class="form-control" placeholder="UserStatus" formControlName="user_status" required>
+            <mat-option value="">Select Status</mat-option>
+            <mat-option value="I">Inactive</mat-option>
+            <mat-option value="A">Active</mat-option>
+            <mat-option value="T">Terminated</mat-option>
+          </mat-select>
+          <div *ngIf="userForm.get('user_status')?.errors?.['required'] && (userForm.get('user_status')?.dirty || userForm.get('user_status')?.touched)">
+            <div class="error-message">User Status is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="department">Department</label>
+          <input type="text" class="form-control" id="department" formControlName="department" />
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary btn-create">Create</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

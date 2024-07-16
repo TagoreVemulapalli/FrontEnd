@@ -1,0 +1,28 @@
+<div class="app-background">
+
+  <div style="text-align: center;">
+    <div class="container">
+      <mat-card class="transparent-card">
+        <mat-card-content>
+          <h1 class="app-title">User Management App</h1>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <button class="btn btn-primary custom-btn mt-3 mx-2" routerLink="/users">View Users</button>
+    <button class="btn btn-success custom-btn mt-3 mx-2" routerLink="/create">Create User</button>
+    <button class="btn btn-warning custom-btn mt-3 mx-2" routerLink="/update">Update User</button>
+    <button class="btn btn-danger custom-btn mt-3 mx-2" routerLink="/delete">Delete User</button>
+  </div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>

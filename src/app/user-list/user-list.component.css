@@ -1,0 +1,54 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #260303;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #110f0f;
+  }
+  
+  .th {
+    background-color: #000000;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #ead3d3;
+  }
+
+  .user-list-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    color: black;
+  }
+  
+  .mat-elevation-z8 {
+    border-radius: 8px;
+    overflow: hidden;
+    color: black;
+  }
+
+  .mat-header-cell, .mat-cell, th, td {
+    color: black !important;
+  }
+ 
+
+  
